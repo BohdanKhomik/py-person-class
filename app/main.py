@@ -30,6 +30,11 @@ def create_person_list(people: list) -> list:
 
             if wife:
                 person.wife = wife
-                wife.husband = person
+
+        elif "husband" in person.__dict__:
+            husband = Person.people.get(person.husband)
+
+            if husband:
+                person.husband = husband
 
     return person_list
