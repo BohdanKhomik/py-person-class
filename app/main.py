@@ -24,8 +24,6 @@ def create_person_list(people: list) -> list:
             person_to_ad.husband = person["husband"]
         person_list.append(person_to_ad)
 
-
-
     for person in person_list:
         if "wife" in person.__dict__:
             for wife in person_list:
