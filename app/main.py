@@ -26,9 +26,10 @@ def create_person_list(people: list) -> list:
 
     for person in person_list:
         if "wife" in person.__dict__:
-            for wife in person_list:
-                if wife.name == person.wife:
-                    person.wife = wife
-                    wife.husband = person
+            wife = Person.people.get(person.wife)
+
+            if wife:
+                person.wife = wife
+                wife.husband = person
 
     return person_list
